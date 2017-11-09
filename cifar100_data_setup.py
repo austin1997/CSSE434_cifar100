@@ -76,13 +76,13 @@ def writeMNIST(sc, input_images, output, format, num_partitions):
 	coarse2[numpy.arange(shape2[0]), coarseLabels2] = 1
 	fine2[numpy.arange(shape2[0]), fineLabels2] = 1
 	
-	print("images.shape: {0}".format(shape))          # 60000 x 28 x 28
+	print("images.shape: {0}".format(shape1))          # 60000 x 28 x 28
 	print("coarse1 labels.shape: {0}".format(coarse1.shape))   # 60000 x 10
 	print("fine1 labels.shape: {0}".format(fine1.shape))
 
 	
 	# create RDDs of vectors
-	imageRDD1 = sc.parallelize(images1.reshape(shape[0], 32*32*3), num_partitions)
+	imageRDD1 = sc.parallelize(images1.reshape(shape1[0], 32*32*3), num_partitions)
 	coarseLabelsRDD1 = sc.parallelize(coarse1, num_partitions)
 	fineLabelsRDD1 = sc.parallelize(fine1, num_partitions)
 
