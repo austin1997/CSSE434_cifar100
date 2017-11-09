@@ -71,10 +71,10 @@ def writeMNIST(sc, input_images, output, format, num_partitions):
 	fine1 = numpy.zeros((shape1[0], 100))
 	coarse2 = numpy.zeros((shape2[0], 20))
 	fine2 = numpy.zeros((shape2[0], 100))
-	coarse1[numpy.arange(shape1[0]), coarse1] = 1
-	fine1[numpy.arange(shape1[0]), fine1] = 1
-	coarse2[numpy.arange(shape2[0]), coarse2] = 1
-	fine2[numpy.arange(shape2[0]), fine2] = 1
+	coarse1[numpy.arange(shape1[0]), coarseLabels1] = 1
+	fine1[numpy.arange(shape1[0]), fineLabels1] = 1
+	coarse2[numpy.arange(shape2[0]), coarseLabels2] = 1
+	fine2[numpy.arange(shape2[0]), fineLabels2] = 1
 	
 	print("images.shape: {0}".format(shape))          # 60000 x 28 x 28
 	print("coarse1 labels.shape: {0}".format(coarse1.shape))   # 60000 x 10
