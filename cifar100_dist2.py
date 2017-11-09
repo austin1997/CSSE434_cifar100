@@ -296,7 +296,7 @@ def map_fun(args, ctx):
         test_xs, test_ys = feed_dict(tf_feed_test.next_batch(batch_size))
         feed = {x: batch_xs, y_: batch_ys}
 
-        print (len(batch_xs) > 0)
+#        print (len(batch_xs) > 0)
         if len(batch_xs) > 0:
           if args.mode == "train":
             summary, _,_ = sess.run([merged, train_step, inc], feed_dict=feed)
